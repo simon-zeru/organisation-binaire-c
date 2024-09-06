@@ -1,0 +1,54 @@
+0. Quelle(s) permission(s) doit avoir le segment contenant le code ? Dans l'extrait de l'affichage, à quelle ligne correspond le segment de code ?
+
+    Le segment contenant le code doit avoir les permissions read et execute (et private ?).  La deuxième ligne (r-xp).
+
+1. Les plages d'adresses sont-elles conservées entre deux exécutions ? Pourquoi ?
+
+    Non car l'OS récupère les premières plages d'adresses disponibles à l'aide d'algorithmes d'optimisation.
+
+2.a. Dans quel segment se trouve la variable str ? 
+    dans stack (pour la gestion des appels de fonction et les variables locales.)
+
+2.b. Dans quel segment se trouve le contenu vers lequel elle pointe ? 
+    dans heap (pour les allocations dynamiques)
+
+2.c. Quelles sont les permissions de ces segments ?
+    rw-p
+
+3.d. Combien d'octets sont nécessaire pour stocker str dans le fichier binaire ? 
+    7ffffffdd000-7ffffffff000 = 22000 soit 2.5 octets
+
+3.e. Combien d'octets sont nécessaire pour stocker le contenu pointé par str dans le fichier binaire ? 
+    555555559000-55555557a000=  21000 soit 2.5 octets
+
+3.a. Dans quel segment se trouve la variable alloc ? 
+    dans stack (pour la gestion des appels de fonction et les variables locales.)
+
+3.b. Dans quel segment se trouve le contenu vers lequel elle pointe ? 
+    dans heap (pour les allocations dynamiques)
+
+3.c. Quelles sont les permissions de ces segments ?
+    rw-p
+
+3.d. Combien d'octets sont nécessaire pour stocker str dans le fichier binaire ? 
+
+4.a Dans quel segment se trouve la variable globvar_decl ? 
+    .bss
+
+4.b Quelles sont les permissions de ce segment ? 
+    r--p
+
+4.c Combien d'octets sont nécessaire pour stocker globvar_decl dans le fichier binaire ? 
+    4
+
+5.a Dans quel segment se trouve la variable globvar_decl ? 
+    .data
+
+5.b Quelles sont les permissions de ce segment ? 
+    r--p
+
+5.c Combien d'octets sont nécessaire pour stocker globvar_init dans le fichier binaire ? 
+    4
+
+6. Combien d'octets sont nécessaire pour stocker cette constante dans le fichier binaire ?
+    4
